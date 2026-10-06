@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #ff8a00;
+  --color-brand-light: #ffe8cc;
+  --color-leaf: #3fa72f;
+  --color-ink: #311f09;
+  --color-body: #4b3b28;
+  --color-muted: #988a7c;
+  --color-mint: #ecf9f0;
+  --color-cream: #fffbf5;
+  --color-soft: #fafaf9;
+  --color-danger: #ff3838;
+
+  --breakpoint-lg: 75rem;
+
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Raleway", "Poppins", sans-serif;
+  --font-serif: "Times New Roman", Times, "Liberation Serif", serif;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply outline-none;
+  }
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-[1112px] px-6 lg:px-0;
+}
+
+@utility heading {
+  @apply font-serif font-bold leading-[1.07] text-ink;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center rounded-full font-semibold transition duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+}
+
+@utility btn-orange {
+  @apply btn bg-brand text-white hover:shadow-brand/30;
+}
+
+@utility btn-green {
+  @apply btn bg-leaf text-white hover:shadow-leaf/30;
+}
+
+@utility field {
+  @apply w-full rounded-xl bg-soft px-6 text-[15px] text-ink placeholder:text-[#a59d94] focus:ring-2 focus:ring-brand/40 lg:px-[48px] lg:text-[18px];
+}
